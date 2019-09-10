@@ -2,7 +2,7 @@
  * 
  * 
  * @author Maxwell.Dodson
- * 
+ * #qwerty:P
  * MadMax
  */
 public class Test {
@@ -14,13 +14,13 @@ public class Test {
 		
 		java.util.Scanner kb = new java.util.Scanner(System.in);
         
-		System.out.println("Enter a number: ");
+		System.out.println("Enter a number with a numerical value: ");
 		int num1 = kb.nextInt();
 		
-		System.out.println("Enter another number: ");
+		System.out.println("Enter another number that has a digit in it: ");
 		int num2 = kb.nextInt();
 		
-		System.out.println("Sum: " + (num1 + num2));
+		System.out.println("The summation of these digits is: " + (num1 + num2));
 
 	}
 
