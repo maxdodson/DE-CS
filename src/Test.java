@@ -1,13 +1,19 @@
 /**
+ * Represents a test class for becoming acquainted with Git, Eclipse, etc.
  * 
+ * <p>
+ * Runs a main program that reads in user values and prints various results.
+ * </p>
  * 
  * @author Maxwell.Dodson
+ * --maks
  * 
- * MadMax
  */
 public class Test {
 
 	/**
+	 * Prints various math operations computed with user-inputted values.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -25,6 +31,8 @@ public class Test {
 		System.out.println("Product: " + (num1 * num2));
 		System.out.println("Quotient: " + (num1 / num2));
 		System.out.println("Modulus: " + (num1 % num2));
+		
+		kb.close();
 
 	}
 
