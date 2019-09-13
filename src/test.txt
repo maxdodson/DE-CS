@@ -1,0 +1,42 @@
+/**
+ * 
+ * 
+ * @author Maxwell.Dodson
+ * 
+ * --maks
+ */
+import java.io.File;
+import java.io.FileWriter;
+public class ReadAndWrite {
+
+	/**
+	 * 
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		// count num of { and then compare to num of }
+		
+		System.out.print("Enter filename: ");
+		String fname = kb.next();
+		
+		//File in = new File(fname);
+		File out = new File("output.txt");
+		try {
+			FileWriter file = new FileWriter(out);
+			
+			System.out.println("Part 1: Unable to Open File");
+			
+			file.write("hello");
+			file.close();
+		} catch (Exception e) {
+			kb.close();
+		}
+		// TODO Rest
+
+	}
+
+}
