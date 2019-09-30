@@ -5,13 +5,14 @@
  * @author Maxwell.Dodson
  * 
 **/
+import java.util.HashMap;
 public class Card implements Comparable<Card> {
 
 	private String suitStr;
 	private int suitInt;
 	private String rankStr;
 	private int rankInt;
-	Map<Integer, String> suits;
+	private HashMap<Integer, String> suits;
 	
 	public Card() {
 		suits = new HashMap<Integer, String>()
@@ -26,16 +27,16 @@ public class Card implements Comparable<Card> {
 		rankInt = 10;
 	}
 	
-	public int getRank() {
-		return rankStr;
-	}
-	
-	public String Suit() {
-		return suitInt;
+	public int getRankInt() {
+		return rankInt;
 	}
 	
 	public String getRankStr() {
 		return rankStr;
+	}
+	
+	public String getSuitStr() {
+		return suitStr;
 	}
 	
 	public int getSuitInt() {
@@ -49,6 +50,16 @@ public class Card implements Comparable<Card> {
 		else {
 			return -1;
 		}
+	}
+	
+	public boolean equals() {
+		
+	}
+	
+	public String toString() {
+		return "";
+	}
+	
 	}
 
 }

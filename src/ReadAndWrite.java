@@ -28,7 +28,7 @@ public class ReadAndWrite {
 	 */
 	public static void main(String[] args) {
 		
-		kb = new Scanner(System.in);
+		kb = new Scanner(System.in); // Prompt user for 3-4 filenames
 		System.out.print("Enter filename: ");
 		String fname1 = kb.next();
       
@@ -39,20 +39,20 @@ public class ReadAndWrite {
 		System.out.print("Enter final filename(s): ");
 		kb.nextLine();
 		String fname3 = kb.nextLine();
-		String[] fnames = fname3.split(" ");
+		String[] fnames = fname3.split(" "); // Split line into String array in order to accept multiple filenames
 		
-		File out = new File("output.txt");
+		File out = new File("C:\\Users\\Maxwell.Dodson\\git\\DE-CS\\src\\output.txt");
 		try {
 			output = new PrintWriter(out);
 		} catch (FileNotFoundException e) {
 		}
 		
-		testBracesBalanced(fname1);
-		testIdenticalFiles(fname1, fname2);
-		fillStory(fnames);
+		testBracesBalanced(fname1); // Test if braces balanced
+		testIdenticalFiles(fname1, fname2); // Test if files identical
+		fillStory(fnames); // Fill story file with inputted words
 		
-		output.close();
-	    kb.close();
+		output.close(); // Close PrintWriter
+	    kb.close(); // Close Scanner
 		
 	}
 		
@@ -64,33 +64,32 @@ public class ReadAndWrite {
 	public static void testBracesBalanced(String filename) {
 		
 		File in = new File(filename);
-		Scanner input1 = null;
+		Scanner input1 = null; // Create Scanner to read in
       
-
 		try {
 			input1 = new Scanner(in);
          
 	        int numOpenBraces = 0;
 	   		int numCloseBraces = 0;
 	   
-	   		while (input1.hasNext()) {
+	   		while (input1.hasNext()) { // While File in has more contents
 	            String next = input1.next();
-	   			if (next.contains("{")) {
+	   			if (next.contains("{")) { // Count open braces
 	   				numOpenBraces++;
 	   			}
-	   			if (next.contains("}")) {
+	   			if (next.contains("}")) { // Count close braces
 	   				numCloseBraces++;
 	   			}
 	   		}
 	   
-	   		if (numOpenBraces == numCloseBraces) {
+	   		if (numOpenBraces == numCloseBraces) { // Compare number of braces to determine if they are balanced
 	   			output.println("Braces Balanced\n");
 	   		}
 	   		else {
 	   			output.println("Braces Not Balanced\n");
 	   		}
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) { // File not found or unable to be opened
 			output.println("Part 1: Unable to Open File");
 		}
 	}
@@ -109,27 +108,27 @@ public class ReadAndWrite {
 		Scanner input2 = null;
 
 		try {
-			input1 = new Scanner(file1);
+			input1 = new Scanner(file1); // Create Scanners to read file1 and file2
 			input2 = new Scanner(file2);
          
 			String file1Str = "";
 			while (input1.hasNext()) {
-				file1Str += input1.next();
+				file1Str += input1.next(); // Append file1's contents to file1Str
 			}
    
 	   		String file2Str = "";
 	   		while (input2.hasNext()) {
-	   			file2Str += input2.next();
+	   			file2Str += input2.next(); // Append file2's contents to file2Str
 	   		}
 	   
-	   		if (file1Str.equals(file2Str)) {
+	   		if (file1Str.equals(file2Str)) { // Compare contents of file1 and file2 to determine if they are identical
 	   			output.println("Files Identical\n");
 	   		}
 	   		else {
 	   			output.println("Files Not Identical\n");
 	   		}
 
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) { // File not found or unable to be opened
 			System.out.println("Part 2: Unable to Open File");
 		}
 	}
@@ -142,12 +141,12 @@ public class ReadAndWrite {
 	public static void fillStory(String[] fnames) {
 		
 		File file3 = new File(fnames[0]);
-		Scanner input3 = null;
+		Scanner input3 = null; // Create Scanner to read file3
 
 		try {
 			input3 = new Scanner(file3);
          
-	   		ArrayList<String> tags = new ArrayList<String>();
+	   		ArrayList<String> tags = new ArrayList<String>(); // Create new ArrayList to hold words for the story
 	        Scanner input4 = null;
          
          
@@ -155,39 +154,39 @@ public class ReadAndWrite {
 	        	File file4 = new File(fnames[1]);
    
 	   			try {
-	   				input4 = new Scanner(file4);
-	   			} catch (FileNotFoundException e) {
+	   				input4 = new Scanner(file4); // Create Scanner to read file4 if provided
+	   			} catch (FileNotFoundException e) { // File not found or unable to be opened
 	   				output.println("Part 3: Unable to Open File");
 	   			}
 	   			
-	   			while (input4.hasNext()) {
-	   				tags.add(input4.next());
+	   			while (input4.hasNext()) { // While file4 has more words
+	   				tags.add(input4.next()); // Add words to the tags ArrayList
 	   			}
 	        }
    		
 	        String line = "";
-	        Pattern pattern = Pattern.compile("<\\S+>");
+	        Pattern pattern = Pattern.compile("<\\S+>"); // Use RegEx to match <> tags
 	        Matcher matcher = null;
 	        int index = 0;
-	        while (input3.hasNextLine()) {
+	        while (input3.hasNextLine()) { // While file3 has another line
 	   			line = input3.nextLine();
-	            matcher = pattern.matcher(line);
-	            while (matcher.find()) {
-	               if ((input4 != null) && (index < tags.size())) {
-	                  line = line.replace(line.substring(matcher.start(), matcher.end()), tags.get(index));
-	                  matcher = pattern.matcher(line);
+	            matcher = pattern.matcher(line); // Match any <> tags
+	            while (matcher.find()) { // While matcher finds any <> tags in the line
+	               if ((input4 != null) && (index < tags.size())) { // If file4 exists and there is a word in tags
+	                  line = line.replace(line.substring(matcher.start(), matcher.end()), tags.get(index)); // Replace <> with the word
+	                  matcher = pattern.matcher(line); // Match next <>
 	                  index++;
 	               }
-	               else if (input4 == null) {
-	                  System.out.println("Enter a word: ");
-	   				  line = line.replace(line.substring(matcher.start(), matcher.end()), kb.next());
+	               else if (input4 == null) { // If file4 not provided
+	                  System.out.println("Enter a word: "); // Prompt user for word
+	   				  line = line.replace(line.substring(matcher.start(), matcher.end()), kb.next()); // Replace <> with inputted word
 	                  matcher = pattern.matcher(line);
 	               }
 	            }
-	            output.println(line);
+	            output.println(line); // Print new story to output file
 	   		}
      
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e) { // File not found or unable to be opened
 			output.println("Part 3: Unable to Open File");
 		}
 

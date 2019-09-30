@@ -1,0 +1,29 @@
+Card
+	Fields:
+	- String suitStr
+	- String rankStr
+	- int suitInt
+	- int rankInt
+	
+	Constructors:
+	- Card (no params) {
+		set fields to defaults
+	  }
+	- Card (String suit, String rank) {
+		set corresponding fields
+		convert to ints
+		set int fields
+	  }
+	- Card (String suit, int rank) {
+		set corresponding fields
+		convert to other types
+		set other fields
+	  }
+	- Card (int Suit, String rank) {
+		set corresponding fields
+		convert to other types
+		set other fields
+	  }
+	
+	Getters:
+	- 
