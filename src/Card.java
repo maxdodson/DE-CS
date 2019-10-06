@@ -76,6 +76,7 @@ public class Card implements Comparable<Card> {
 				return entry.getKey(); // Return the entry's key
 			}
 		}
+		return -1;
 	}
 	
 	public int getRankInt() {
@@ -98,17 +99,15 @@ public class Card implements Comparable<Card> {
 		return (this.rankInt - card.rankInt); // Return difference in ranks of cards
 	}
 	
-	public boolean equals(Card other) {
-		if ((this.suitInt == other.suitInt) && (this.rankInt == other.rankInt)) { // Return true if suits and ranks equal, false otherwise
-			return true;
+	public boolean equals(Object obj) { // Override Object's equals method
+		if (obj != null) {
+			obj = (Card)obj; // Cast obj as Card
+			return ((this.suitInt == obj.suitInt) && (this.rankInt == obj.rankInt)); // Return true if suits and ranks equal, false otherwise
 		}
-		return false;
 	}
 	
 	public String toString() {
-		return "";
-	}
-	
+		return rankStr + " of " + suitStr;
 	}
 
 }
