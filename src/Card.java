@@ -58,7 +58,6 @@ public class Card implements Comparable<Card> {
 	 * 
 	**/
 	public Card(String suit, String rank) {
-		super();
 		suitStr = suit;
 		suitInt = getKey(suits, suit);
 		rankInt = getKey(ranks, rank);
@@ -73,7 +72,6 @@ public class Card implements Comparable<Card> {
 	 * 
 	**/
 	public Card(String suit, int rank) {
-		super();
 		suitStr = suit;
 		suitInt = getKey(suits, suit);
 		rankInt = rank;
@@ -88,7 +86,6 @@ public class Card implements Comparable<Card> {
 	 * 
 	**/
 	public Card(int suit, String rank) {
-		super();
 		suitStr = suits.get(suit);
 		suitInt = suit;
 		rankInt = getKey(ranks, rank);
