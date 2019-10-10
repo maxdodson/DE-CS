@@ -80,7 +80,7 @@ public class Deck {
 	 * 
 	**/
 	public void shuffle() {
-		for (int i=1; i<=5; i++) { // Perform shuffle process 5 times
+		for (int i=1; i<=deck.length; i++) { // Perform shuffle process deck.length times
 			int random1 = (int)(Math.random() * (deck.length)); // Generate two random integers from 0 to deck.length-1
 			int random2 = (int)(Math.random() * (deck.length));
 			Card temp = deck[random1];
