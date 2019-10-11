@@ -90,25 +90,29 @@ public class Deck {
 	}
 	
 	/**
-	 * Returns whether this Deck equals another Deck.
+	 * Returns whether this Deck equals another Object by comparing sizes and Cards in each.
 	 * 
-	 * @param other another Deck to compare
+	 * @param other another Object to compare to this
 	 * @return true if both Decks are the same size and have the same Cards in order, false otherwise
-	 * @return 
 	 * 
 	**/
-	public boolean equals(Deck other) {
-      if (deck.length != other.getLength()) { // Return false if arrays not equal in length
-         return false;
-      }
-      else { // If arrays equal in length, compare Cards in each array
-         for (int i=0; i<deck.length; i++) {
-            if (!(deck[i].equals(other.getCard(i)))) {
-               return false; // Return false if any Cards at the same index are unequal
-            }
-         }
-      }
-      return true;
+	public boolean equals(Object other) {
+		if (other instanceof Deck) { // If other is a Deck
+			if (deck.length != ((Deck)other).getLength()) { // Return false if arrays not equal in length
+		         return false;
+		    }
+	        else { // If arrays equal in length, compare Cards in each Deck
+		        for (int i=0; i<deck.length; i++) {
+		        	if (!(deck[i].equals(((Deck)other).getCard(i)))) {
+		        		return false; // Return false if any Cards at the same index are unequal
+		            }
+		        }
+	        }
+			return true;
+		}
+		else {
+			return false; // Return false immediately if other is not a Deck
+		}
 	}
 	
 	/**
@@ -176,6 +180,26 @@ public class Deck {
 
 		deck = newDeck; // Replace deck with newDeck
 		return picked;
+	}
+	
+	/**
+	 * Sorts elements in an array by breaking down the array and sorting each subarray with InsertionSort.
+	 * 
+	 * May be used to sort when an algorithm faster than insertion and selection sort is needed.
+	 * 
+	**/
+	public void shellSort() {
+	    for (int gap = deck.length/2; gap > 0; gap /= 2) { // Break the array down into subarrays using a gap value
+	        for (int i = gap; i < deck.length; i++) {
+	            Card element = deck[i]; // Get next element
+	            int j = i;
+	            while ((j >= gap) && (deck[j-gap].compareTo(element) > 0)) { // Sort each subarray using InsertionSort
+	                deck[j] = deck[j-gap]; // While deck[j-gap] "greater than" element, move it to the right
+	                j -= gap;
+	            }
+	            deck[j] = element;
+	        }
+	    }
 	}
 	
 	/**

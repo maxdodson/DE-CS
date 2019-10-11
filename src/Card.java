@@ -163,14 +163,17 @@ public class Card implements Comparable<Card> {
 	}
 	
 	/**
-	 * Returns whether this Card equals another Card by comparing suit and rank.
+	 * Returns whether this Card equals another Object by comparing suit and rank if both are Cards.
 	 * 
-	 * @param Card another Card to compare
+	 * @param other another Object to compare to this
 	 * @return true if this Card's suit and rank are equal to the other Card's suit and rank, false otherwise
 	 * 
 	**/
-	public boolean equals(Card other) {
-		return ((this.suitInt == other.suitInt) && (this.rankInt == other.rankInt)); // Return true if suits and ranks equal, false otherwise
+	public boolean equals(Object other) {
+		if (other instanceof Card) { // If other is a Card
+			return ((this.suitInt == ((Card)other).suitInt) && (this.rankInt == ((Card)other).rankInt)); // Return true if suits and ranks equal, false otherwise
+		}
+		return false; // Return false immediately if other is not a Card
 	}
 	
 	/**
