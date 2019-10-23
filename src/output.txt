@@ -1,5 +1,0 @@
-Braces Balanced
-
-Files Identical
-
-It was a dark and stormy day!
