@@ -11,7 +11,7 @@
 public class TestClass {
 	
 	/**
-	 * Adds a new Disk to the robot's input queue
+	 * Tests ProductionLine classes by asserting various conditions and runs ProductionLine with random Disks.
 	 * 
 	 * @param args command line arguments
 	 */
