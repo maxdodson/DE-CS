@@ -31,7 +31,7 @@ public class Tower {
 	 * @param regular true if regular order, false if inverted order
 	 */
 	public Tower(boolean regular) {
-		super();
+		disks = new Stack<Disk>();
 		this.regular = regular;
 	}
 	
@@ -42,16 +42,21 @@ public class Tower {
 	 */
 	public void addDisk(Disk d) { // Add disk if it fits model
 		if (regular) {
-			if (disks.isEmpty() || d.compareTo(disks.peek()) < 0) { // If regular, new Disk must be "smaller"
+			if (disks.isEmpty() || d.compareTo(disks.peek()) <= 0) { // If regular, new Disk must be "greater"
 				disks.push(d);
+				//System.out.println("Added in smaller");
+				//System.out.println(d + "should now be " + disks.peek());
+				//System.out.println("Empty: " + isEmpty());
 			}
 		}
 		else {
-			if (disks.isEmpty() || d.compareTo(disks.peek()) > 0) { // If inverted, new Disk must be "greater"
+			if (disks.isEmpty() || d.compareTo(disks.peek()) >= 0) { // If inverted, new Disk must be "smaller"
 				disks.push(d);
+				//System.out.println("Added in greater");
+				//System.out.println(d + "should now be " + disks.peek());
+				//System.out.println("Empty: " + isEmpty());
 			}
 		}
-		disks.push(d);
 	}
 	
 	/**
@@ -64,6 +69,7 @@ public class Tower {
 			temp.push(disks.pop()); // Store elements in reverse order in temporary Stack
 		}
 		disks = temp;
+		regular = !regular; // Change whether Tower is regular or inverted
 	}
 	
 	/**

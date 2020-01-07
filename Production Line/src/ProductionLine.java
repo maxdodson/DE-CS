@@ -29,7 +29,7 @@ public class ProductionLine {
 	public ProductionLine() {
 		input = new LinkedList<Disk>();
 		output = new LinkedList<Tower>();
-		arm = new Tower();
+		arm = new Tower(false);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class ProductionLine {
 	public void unloadRobot() {
 		arm.invert(); // Invert the Tower of disks on the robot's arm
 		output.add(arm); // Add the Tower to the output queue
-		arm = new Tower();
+		arm = new Tower(false);
 	}
 	
 	/**
@@ -56,19 +56,20 @@ public class ProductionLine {
 	 * 
 	 */
 	public void process() {
-		if (input.isEmpty()) { // Unload robot and end if input queue is empty
-			unloadRobot();
-			return;
+		while (!input.isEmpty()) {
+			if (arm.isEmpty()) {
+				arm.addDisk(input.remove()); // Add input Disk to arm if arm is empty
+			}
+			else {
+				if (input.peek().compareTo(arm.peek()) >= 0) { // Add input Disk to arm if the new Disk is larger
+					arm.addDisk(input.remove());
+				}
+				else {
+					unloadRobot(); // If arm is not empty or new Disk is smaller, unload the arm and try again
+				}
+			}
 		}
-		
-		if (arm.isEmpty() || input.peek().compareTo(arm.peek()) > 0) {
-			arm.addDisk(input.remove()); // Add input disk to arm if arm is empty or the new disk is larger
-			process();
-		}
-		else {
-			unloadRobot(); // If arm is not empty or new disk is smaller, unload the arm and try again
-			process();
-		}
+		unloadRobot(); // Unload robot once input queue is empty
 	}
 	
 	/**
