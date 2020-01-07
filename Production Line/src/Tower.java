@@ -10,7 +10,7 @@
 import java.util.Stack;
 import java.util.Iterator;
 
-public class Tower {
+public class Tower extends Stack<Disk> {
 	
 	private Stack<Disk> disks;
 	private boolean regular;
