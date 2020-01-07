@@ -42,19 +42,13 @@ public class Tower {
 	 */
 	public void addDisk(Disk d) { // Add disk if it fits model
 		if (regular) {
-			if (disks.isEmpty() || d.compareTo(disks.peek()) <= 0) { // If regular, new Disk must be "greater"
+			if (disks.isEmpty() || d.compareTo(disks.peek()) <= 0) { // If regular, new Disk must be "smaller"
 				disks.push(d);
-				//System.out.println("Added in smaller");
-				//System.out.println(d + "should now be " + disks.peek());
-				//System.out.println("Empty: " + isEmpty());
 			}
 		}
 		else {
-			if (disks.isEmpty() || d.compareTo(disks.peek()) >= 0) { // If inverted, new Disk must be "smaller"
+			if (disks.isEmpty() || d.compareTo(disks.peek()) >= 0) { // If inverted, new Disk must be "larger"
 				disks.push(d);
-				//System.out.println("Added in greater");
-				//System.out.println(d + "should now be " + disks.peek());
-				//System.out.println("Empty: " + isEmpty());
 			}
 		}
 	}

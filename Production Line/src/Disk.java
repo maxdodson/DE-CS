@@ -7,7 +7,6 @@
  * @see Tower
  * 
 **/
-
 public class Disk implements Comparable<Disk> {
 
 	private int radius;
