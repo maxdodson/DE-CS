@@ -1,0 +1,6 @@
+/Users/mdodson/git/DE-CS/Knapsack/src/0lim0.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/0lim50.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/5lim4.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/6.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/88.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/12345.txt

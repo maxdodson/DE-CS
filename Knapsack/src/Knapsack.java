@@ -45,27 +45,31 @@ public class Knapsack {
 				for (File f : files) { // Call knapsackSum() for each test file
 					try {
 						Scanner file = new Scanner(f);
-						int limit = Integer.valueOf(file.next()); // limit is first number in file
-						
-						ArrayList<Integer> nums = new ArrayList<Integer>();
-						while (file.hasNext()) { // Add remaining weights in the file to nums
-							nums.add(Integer.valueOf(file.next()));
+						if (file.hasNext()) { // Process file if has contents
+							int limit = Integer.valueOf(file.next()); // limit is first number in file
+							
+							ArrayList<Integer> nums = new ArrayList<Integer>();
+							while (file.hasNext()) { // Add remaining weights in the file to nums
+								nums.add(Integer.valueOf(file.next()));
+							}
+							int[] weights = new int[nums.size()];
+							for (int i=0; i<weights.length; i++) { // Convert nums ArrayList to Array
+								weights[i] = nums.get(i);
+							}
+							
+							ArrayList<Integer> bestWeights = new ArrayList<Integer>();
+							knapsackSum(weights, weights.length, limit, bestWeights); // Obtain best weights
+							
+							String weightsStr = listWeights(bestWeights);
+							String weightsList = nums.toString();
+							weightsList = weightsList.replaceAll("\\[", "").replaceAll("\\]", ""); // Delete brackets
+							
+							output.print(f + "\t" + limit + "\t" + weightsList + "\n\n"); // Print output to file
+							output.print(weightsStr + "\n\n");
+							
+						} else {
+							continue; // Proceed to next file if this file is empty
 						}
-						int[] weights = new int[nums.size()];
-						for (int i=0; i<weights.length; i++) { // Convert nums ArrayList to Array
-							weights[i] = nums.get(i);
-						}
-						
-						ArrayList<Integer> bestWeights = new ArrayList<Integer>();
-						knapsackSum(weights, weights.length, limit, bestWeights); 
-						
-						String weightsStr = listWeights(bestWeights);
-						String weightsList = bestWeights.toString();
-						weightsList = weightsList.replaceAll("\\[", "").replaceAll("\\]", ""); // Delete brackets
-						
-						output.print(f + "\t" + limit + "\t" + weightsList + "\n"); // Print output to file
-						output.print(weightsStr + "\n\n");
-						
 					} catch (IOException e) {
 						continue; // Proceed to next file if filename is invalid
 					}
@@ -90,7 +94,7 @@ public class Knapsack {
 	 */
 	public static String listWeights(List<Integer> weights) {
 		if (weights.isEmpty()) {
-			 return nonePossible + object + "s";
+			 return nonePossible + object + "s\n";
 		}
 		
 		String str = "";
