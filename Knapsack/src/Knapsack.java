@@ -111,7 +111,7 @@ public class Knapsack {
 	 */
 	public static void main(String[] args) {
 		
-		if (args != null) {
+		if (args.length != 0) {
 			processFile(args[0]); // Process file provided in command line arguments
 		}
 		else { // Prompt user for filename if one is not provided
@@ -162,14 +162,6 @@ public class Knapsack {
 		int withLast = w[n-1] + knapsackSum(w, n-1, limit-w[n-1], list); // Add w[n-1] and succeeding values
 		int withoutLast = knapsackSum(w, n-1, limit); // Skip w[n-1] and only add succeeding values
 
-		/*
-		if (withLast >= withoutLast) {
-			list.add(w[n-1]);
-			return withLast;
-		}
-		else {
-			return withoutLast;
-		}*/
 		list.add(w[n-1]); // Add the current best weight to the list
 		return Math.max(withLast, withoutLast); // Return the maximum sum of the weights
 	}

@@ -1,6 +1,13 @@
 /Users/mdodson/git/DE-CS/Knapsack/src/0lim0.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/lim.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/0lim50.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/5lim4.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/567lim4.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/6.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/88.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/12345.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/12345678.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/12345678lim30.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/does_not_exist.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/empty.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/1233456678.txt
