@@ -1,0 +1,27 @@
+/Users/mdodson/git/DE-CS/Knapsack/src/0lim0.txt	0	
+No possible watermelons
+
+/Users/mdodson/git/DE-CS/Knapsack/src/0lim50.txt	50	0
+0 pound watermelon
+
+
+/Users/mdodson/git/DE-CS/Knapsack/src/5lim4.txt	4	
+No possible watermelons
+
+/Users/mdodson/git/DE-CS/Knapsack/src/6.txt	6	6
+6 pound watermelon
+
+
+/Users/mdodson/git/DE-CS/Knapsack/src/88.txt	16	8, 8
+8 pound watermelon
+8 pound watermelon
+
+
+/Users/mdodson/git/DE-CS/Knapsack/src/12345.txt	15	1, 2, 3, 4, 5
+1 pound watermelon
+2 pound watermelon
+3 pound watermelon
+4 pound watermelon
+5 pound watermelon
+
+

@@ -37,7 +37,7 @@ public class Knapsack {
 			try {
 				PrintWriter output = new PrintWriter(out);
 				
-				ArrayList<File> files;
+				ArrayList<File> files = new ArrayList<File>();
 				while (input.hasNextLine()) { // Add each file listed inside to an ArrayList
 					files.add(new File(input.nextLine()));
 				}
@@ -48,24 +48,29 @@ public class Knapsack {
 						int limit = Integer.valueOf(file.next()); // limit is first number in file
 						
 						ArrayList<Integer> nums = new ArrayList<Integer>();
-						while (file.hasNext()) { // Add remaining numbers (weights) in file to nums
+						while (file.hasNext()) { // Add remaining weights in the file to nums
 							nums.add(Integer.valueOf(file.next()));
 						}
-						Integer[] weights = nums.toArray(new Integer[0]); // Convert nums to int Array
+						int[] weights = new int[nums.size()];
+						for (int i=0; i<weights.length; i++) { // Convert nums ArrayList to Array
+							weights[i] = nums.get(i);
+						}
 						
 						ArrayList<Integer> bestWeights = new ArrayList<Integer>();
 						knapsackSum(weights, weights.length, limit, bestWeights); 
 						
 						String weightsStr = listWeights(bestWeights);
-						String weightsList = bestWeights.replaceAll("\\[", "").replaceAll("\\]",""); // Delete []
+						String weightsList = bestWeights.toString();
+						weightsList = weightsList.replaceAll("\\[", "").replaceAll("\\]", ""); // Delete brackets
 						
-						output.print(f + "\t" + limit + "\t" + weightsList + "\n");
+						output.print(f + "\t" + limit + "\t" + weightsList + "\n"); // Print output to file
 						output.print(weightsStr + "\n\n");
 						
 					} catch (IOException e) {
-						continue; // Proceed to next file if invalid filename
+						continue; // Proceed to next file if filename is invalid
 					}
 				}
+				output.close(); // Save and close PrintWriter
 			} catch (FileNotFoundException e) {
 			}
 		} catch (IOException e) { // If file is invalid, prompt user for a new one
@@ -74,9 +79,8 @@ public class Knapsack {
 			System.out.print("Invalid file. Please enter another: ");
 			String newFile = kb.next();
 			
-			processFile(newFile); // Try to processFile() again
+			processFile(newFile); // Try processFile() again
 		}
-
 	}
 	
 	/**
@@ -89,7 +93,7 @@ public class Knapsack {
 			 return nonePossible + object + "s";
 		}
 		
-		String str;
+		String str = "";
 		for (Integer i : weights) {
 			str += i + " " + unit + " " + object + "\n";
 		}
@@ -102,12 +106,6 @@ public class Knapsack {
 	 * @param args command line arguments; may be a filename
 	 */
 	public static void main(String[] args) {
-		
-		int[] stuff = new int[] { 1, 2, 3, 4, 5};
-		int[] stuff2 = new int[] { 8, 16, 20 };
-		int[] stuff3 = new int[] { 8 };
-		int[] stuff4 = new int[] { 8, 8 };
-		int[] stuff5 = new int[] {1, 2, 3, 4, 5};
 		
 		if (args != null) {
 			processFile(args[0]); // Process file provided in command line arguments
@@ -174,5 +172,4 @@ public class Knapsack {
 
 }
 
-// I used StackOverflow to learn how to use ArrayList.toArray()
-// Franky also helped me and Will understand the problem 
+// Franky helped me and Will understand the problem 
