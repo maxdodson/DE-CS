@@ -44,6 +44,8 @@ public class TestClass {
 		// ProductionLine
 		ProductionLine pLine = new ProductionLine();
 		
+		System.out.println("Inputted Disks:\n");
+		
 		Disk[] disks = new Disk[15];
 		for (int i=0; i<disks.length; i++) {
 			disks[i] = new Disk((int)(Math.random() * 10) + 1); // Generate Disks of random radius (1-10)
@@ -51,7 +53,8 @@ public class TestClass {
 			System.out.println(disks[i]);
 		}
 		
-		System.out.println("---------------------\n");
+		System.out.println("---------------------");
+		System.out.println("Outputted Towers:\n");
 		
 		pLine.process(); // Process all the Disks
 		
