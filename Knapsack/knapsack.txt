@@ -58,3 +58,12 @@ No possible watermelons
 8 pound watermelon
 
 
+/Users/mdodson/git/DE-CS/Knapsack/src/frank.txt	39	5, 12, 34, 2, 6, 6
+
+5 pound watermelon
+12 pound watermelon
+2 pound watermelon
+6 pound watermelon
+6 pound watermelon
+
+
