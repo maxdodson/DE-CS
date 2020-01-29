@@ -10,5 +10,4 @@
 /Users/mdodson/git/DE-CS/Knapsack/src/12345678lim30.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/does_not_exist.txt
 /Users/mdodson/git/DE-CS/Knapsack/src/empty.txt
-/Users/mdodson/git/DE-CS/Knapsack/src/1233456678.txt
-/Users/mdodson/git/DE-CS/Knapsack/src/frank.txt
+/Users/mdodson/git/DE-CS/Knapsack/src/1233456678lim30.txt
