@@ -50,7 +50,9 @@ public class TestClass {
 				
 				ArrayList<String> expressionsList = new ArrayList<String>();
 				while (input.hasNextLine()) { // Add each expression in the file to an ArrayList
-					expressionsList.add(input.nextLine());
+					String line = input.nextLine().trim();
+					if (!line.equals("")) // Only add non-empty lines
+						expressionsList.add(line);
 				}
 				input.close();
 				// Convert expressions ArrayList to Array
