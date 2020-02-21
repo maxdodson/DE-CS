@@ -1,0 +1,231 @@
+Eval: 12
+Prefix: + 8 4 
+Infix: (8+4)
+Postfix: 8 4 + 
+Postfix Eval: 12
+
+
+Eval: 48
+Prefix: * 8 6 
+Infix: (8*6)
+Postfix: 8 6 * 
+Postfix Eval: 48
+
+
+Eval: 32
+Prefix: + 8 * 4 6 
+Infix: (8+(4*6))
+Postfix: 8 4 6 * + 
+Postfix Eval: 32
+
+
+Eval: 38
+Prefix: + * 8 4 6 
+Infix: ((8*4)+6)
+Postfix: 8 4 * 6 + 
+Postfix Eval: 38
+
+
+Eval: 368
+Prefix: * 8 + 4 * 6 7 
+Infix: (8*(4+(6*7)))
+Postfix: 8 4 6 7 * + * 
+Postfix Eval: 368
+
+
+Eval: 248
+Prefix: * 8 + * 4 6 7 
+Infix: (8*((4*6)+7))
+Postfix: 8 4 6 * 7 + * 
+Postfix Eval: 248
+
+
+Eval: 224
+Prefix: * + 8 * 4 6 7 
+Infix: ((8+(4*6))*7)
+Postfix: 8 4 6 * + 7 * 
+Postfix Eval: 224
+
+
+Eval: 416
+Prefix: * * 8 4 + 6 7 
+Infix: ((8*4)*(6+7))
+Postfix: 8 4 * 6 7 + * 
+Postfix Eval: 416
+
+
+Eval: 266
+Prefix: * + * 8 4 6 7 
+Infix: (((8*4)+6)*7)
+Postfix: 8 4 * 6 + 7 * 
+Postfix Eval: 266
+
+
+Eval: 116
+Prefix: + 8 * 4 + 6 * 7 3 
+Infix: (8+(4*(6+(7*3))))
+Postfix: 8 4 6 7 3 * + * + 
+Postfix Eval: 116
+
+
+Eval: 188
+Prefix: + 8 * 4 + * 6 7 3 
+Infix: (8+(4*((6*7)+3)))
+Postfix: 8 4 6 7 * 3 + * + 
+Postfix Eval: 188
+
+
+Eval: 146
+Prefix: + 8 * + 4 * 6 7 3 
+Infix: (8+((4+(6*7))*3))
+Postfix: 8 4 6 7 * + 3 * + 
+Postfix Eval: 146
+
+
+Eval: 371
+Prefix: + * 8 + 4 * 6 7 3 
+Infix: ((8*(4+(6*7)))+3)
+Postfix: 8 4 6 7 * + * 3 + 
+Postfix Eval: 371
+
+
+Eval: 248
+Prefix: + 8 * * 4 6 + 7 3 
+Infix: (8+((4*6)*(7+3)))
+Postfix: 8 4 6 * 7 3 + * + 
+Postfix Eval: 248
+
+
+Eval: 101
+Prefix: + 8 * + * 4 6 7 3 
+Infix: (8+(((4*6)+7)*3))
+Postfix: 8 4 6 * 7 + 3 * + 
+Postfix Eval: 101
+
+
+Eval: 251
+Prefix: + * 8 + * 4 6 7 3 
+Infix: ((8*((4*6)+7))+3)
+Postfix: 8 4 6 * 7 + * 3 + 
+Postfix Eval: 251
+
+
+Eval: 53
+Prefix: + + 8 * 4 6 * 7 3 
+Infix: ((8+(4*6))+(7*3))
+Postfix: 8 4 6 * + 7 3 * + 
+Postfix Eval: 53
+
+
+Eval: 227
+Prefix: + * + 8 * 4 6 7 3 
+Infix: (((8+(4*6))*7)+3)
+Postfix: 8 4 6 * + 7 * 3 + 
+Postfix Eval: 227
+
+
+Eval: 92
+Prefix: + * 8 4 * 6 + 7 3 
+Infix: ((8*4)+(6*(7+3)))
+Postfix: 8 4 * 6 7 3 + * + 
+Postfix Eval: 92
+
+
+Eval: 71
+Prefix: + * 8 4 * + 6 7 3 
+Infix: ((8*4)+((6+7)*3))
+Postfix: 8 4 * 6 7 + 3 * + 
+Postfix Eval: 71
+
+
+Eval: 419
+Prefix: + * * 8 4 + 6 7 3 
+Infix: (((8*4)*(6+7))+3)
+Postfix: 8 4 * 6 7 + * 3 + 
+Postfix Eval: 419
+
+
+Eval: 59
+Prefix: + + * 8 4 6 * 7 3 
+Infix: (((8*4)+6)+(7*3))
+Postfix: 8 4 * 6 + 7 3 * + 
+Postfix Eval: 59
+
+
+Eval: 269
+Prefix: + * + * 8 4 6 7 3 
+Infix: ((((8*4)+6)*7)+3)
+Postfix: 8 4 * 6 + 7 * 3 + 
+Postfix Eval: 269
+
+
+Eval: 92
+Prefix: + * 8 4 * 6 + 7 3 
+Infix: ((8*4)+(6*(7+3)))
+Postfix: 8 4 * 6 7 3 + * + 
+Postfix Eval: 92
+
+
+Eval: 71
+Prefix: + * 8 4 * + 6 7 3 
+Infix: ((8*4)+((6+7)*3))
+Postfix: 8 4 * 6 7 + 3 * + 
+Postfix Eval: 71
+
+
+Eval: 419
+Prefix: + * * 8 4 + 6 7 3 
+Infix: (((8*4)*(6+7))+3)
+Postfix: 8 4 * 6 7 + * 3 + 
+Postfix Eval: 419
+
+
+Eval: 90
+Prefix: + 8 + 4 * 6 + 7 * 3 2 
+Infix: (8+(4+(6*(7+(3*2)))))
+Postfix: 8 4 6 7 3 2 * + * + + 
+Postfix Eval: 90
+
+
+Eval: 190
+Prefix: + + 8 * 4 + * 6 7 3 2 
+Infix: ((8+(4*((6*7)+3)))+2)
+Postfix: 8 4 6 7 * 3 + * + 2 + 
+Postfix Eval: 190
+
+
+Eval: 60
+Prefix: + 8 + + 4 * 6 7 * 3 2 
+Infix: (8+((4+(6*7))+(3*2)))
+Postfix: 8 4 6 7 * + 3 2 * + + 
+Postfix Eval: 60
+
+
+Eval: 373
+Prefix: + * 8 + 4 * 6 7 + 3 2 
+Infix: ((8*(4+(6*7)))+(3+2))
+Postfix: 8 4 6 7 * + * 3 2 + + 
+Postfix Eval: 373
+
+
+Eval: 373
+Prefix: + + * 8 + 4 * 6 7 3 2 
+Infix: (((8*(4+(6*7)))+3)+2)
+Postfix: 8 4 6 7 * + * 3 + 2 + 
+Postfix Eval: 373
+
+
+Eval: 148
+Prefix: + 8 + * + 4 * 6 7 3 2 
+Infix: (8+(((4+(6*7))*3)+2))
+Postfix: 8 4 6 7 * + 3 * 2 + + 
+Postfix Eval: 148
+
+
+Eval: 148
+Prefix: + + 8 * + 4 * 6 7 3 2 
+Infix: ((8+((4+(6*7))*3))+2)
+Postfix: 8 4 6 7 * + 3 * + 2 + 
+Postfix Eval: 148
+
+

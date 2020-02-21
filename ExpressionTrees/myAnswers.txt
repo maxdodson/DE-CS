@@ -1,0 +1,168 @@
+Eval: 6
+Prefix: + 1 5 
+Infix: (1+5)
+Postfix: 1 5 + 
+Postfix Eval: 6
+
+
+Eval: 5
+Prefix: * 1 5 
+Infix: (1*5)
+Postfix: 1 5 * 
+Postfix Eval: 5
+
+
+Eval: 6
+Prefix: + 1 5 
+Infix: (1+5)
+Postfix: 1 5 + 
+Postfix Eval: 6
+
+
+Eval: 5
+Prefix: * 1 5 
+Infix: (1*5)
+Postfix: 1 5 * 
+Postfix Eval: 5
+
+
+Eval: 6
+Prefix: + 1 5 
+Infix: (1+5)
+Postfix: 1 5 + 
+Postfix Eval: 6
+
+
+Eval: 5
+Prefix: * 1 5 
+Infix: (1*5)
+Postfix: 1 5 * 
+Postfix Eval: 5
+
+
+Eval: 6
+Prefix: + 1 5 
+Infix: (1+5)
+Postfix: 1 5 + 
+Postfix Eval: 6
+
+
+Eval: 5
+Prefix: * 1 5 
+Infix: (1*5)
+Postfix: 1 5 * 
+Postfix Eval: 5
+
+
+Eval: 0
+Prefix: + 0 0 
+Infix: (0+0)
+Postfix: 0 0 + 
+Postfix Eval: 0
+
+
+Eval: 0
+Prefix: * 0 0 
+Infix: (0*0)
+Postfix: 0 0 * 
+Postfix Eval: 0
+
+
+Eval: 0
+Prefix: + 0 0 
+Infix: (0+0)
+Postfix: 0 0 + 
+Postfix Eval: 0
+
+
+Eval: 0
+Prefix: * 0 0 
+Infix: (0*0)
+Postfix: 0 0 * 
+Postfix Eval: 0
+
+
+Eval: 5
+Prefix: + 0 5 
+Infix: (0+5)
+Postfix: 0 5 + 
+Postfix Eval: 5
+
+
+Eval: 0
+Prefix: * 0 5 
+Infix: (0*5)
+Postfix: 0 5 * 
+Postfix Eval: 0
+
+
+Eval: 5
+Prefix: + 0 5 
+Infix: (0+5)
+Postfix: 0 5 + 
+Postfix Eval: 5
+
+
+Eval: 0
+Prefix: * 0 5 
+Infix: (0*5)
+Postfix: 0 5 * 
+Postfix Eval: 0
+
+
+Eval: 54
+Prefix: * + 1 5 9 
+Infix: ((1+5)*9)
+Postfix: 1 5 + 9 * 
+Postfix Eval: 54
+
+
+Eval: 54
+Prefix: * + 1 5 9 
+Infix: ((1+5)*9)
+Postfix: 1 5 + 9 * 
+Postfix Eval: 54
+
+
+Eval: 14
+Prefix: * 1 + 5 9 
+Infix: (1*(5+9))
+Postfix: 1 5 9 + * 
+Postfix Eval: 14
+
+
+Eval: 14
+Prefix: * 1 + 5 9 
+Infix: (1*(5+9))
+Postfix: 1 5 9 + * 
+Postfix Eval: 14
+
+
+Eval: 68320
+Prefix: + 15380 52940 
+Infix: (15380+52940)
+Postfix: 15380 52940 + 
+Postfix Eval: 68320
+
+
+Eval: 814217200
+Prefix: * 15380 52940 
+Infix: (15380*52940)
+Postfix: 15380 52940 * 
+Postfix Eval: 814217200
+
+
+Eval: 19464928
+Prefix: * 1538 + 7362 5294 
+Infix: (1538*(7362+5294))
+Postfix: 1538 7362 5294 + * 
+Postfix Eval: 19464928
+
+
+Eval: 38975966
+Prefix: + 1538 * 7362 5294 
+Infix: (1538+(7362*5294))
+Postfix: 1538 7362 5294 * + 
+Postfix Eval: 38975966
+
+
