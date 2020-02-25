@@ -96,6 +96,21 @@ public class Card implements Comparable<Card> {
 	}
 	
 	/**
+	 * Instantiates a Card when given a suit and rank.
+	 * 
+	 * @param suit suit as int
+	 * @param rank rank as int
+	 * 
+	**/
+	public Card(int suit, int rank) {
+		super();
+		suitStr = suits.get(suit);
+		suitInt = suit;
+		rankInt = rank;
+		rankStr = ranks.get(rank);
+	}
+	
+	/**
 	 * Returns the key of an Entry in a HashMap when given a value.
 	 * 
 	 * @param map HashMap<Integer, String> to search in
