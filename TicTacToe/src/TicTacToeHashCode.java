@@ -24,8 +24,9 @@ public class TicTacToeHashCode extends Board {
 	public static final int SPACE_VALUE = 0;
 	public static final int X_VALUE = 2;
 	public static final int O_VALUE = 1;
-	public static final String TEST_FILE = "tests.txt";
+	public static final String TEST_FILE = "TTT_Tests.txt";
 	public static final int DELAY_MS = 4000;
+	public static final int STR_LENGTH = 9;
 
 	/**
 	 * Instantiates a new TicTacToeHashCode with a String title
@@ -129,21 +130,42 @@ public class TicTacToeHashCode extends Board {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		TicTacToeHashCode board = new TicTacToeHashCode("Tic Tac Toe");
-		while (true) {
-		    board.displayRandomString();
-		    Thread.sleep(DELAY_MS); // Delay changing the board
-		}/*
 		File in = new File(TEST_FILE); // Attempt to find winners file
 		try {
 			Scanner input = new Scanner(in);
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
-				
-				
-				
+				if (line.length() == STR_LENGTH) {
+					// Convert the string to a char[][]
+					char[][] newBoard = TicTacToe.stringToBoard(line);
+					// If the board is valid, determine whether it is a winner or loser
+					if (TicTacToe.valid(newBoard)) {
+						if (board.isWin(line)) { // Board is a winner
+							System.out.println(line + " - Winner");
+							// Change board labels accordingly
+							board.setBoardString(line);
+							board.setHashCodeLabel(board.myHashCode());
+							board.setWinnerLabel(true);
+							Thread.sleep(DELAY_MS); // Delay changing the board
+							continue;
+						}
+						else { // Board is a loser
+							System.out.println(line + " - Loser");
+							continue;
+						}
+					}
+					System.out.println(line + " - Invalid Board");
+					continue;
+				}
+				System.out.println(line + " - Invalid Length");
+				continue;
 			}
 			input.close();
-		} catch (IOException e) {}*/
+		} catch (IOException e) {}
+		while (true) {
+			   board.displayRandomString(); // Display random TicTacToe board
+			   Thread.sleep(DELAY_MS); // Delay changing the board
+		}
 	}
 
 }

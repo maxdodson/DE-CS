@@ -1,3 +1,15 @@
+/**
+ * Represents a TicTacToe board and provides Graphics components.
+ * 
+ * Maxwell Dodson
+ * DE CS II
+ * 3/15/20
+ * Hash Functions
+ * 
+ * @see TicTacToe
+ * @see TicTacToeHashCode
+ * 
+ */
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -58,7 +70,7 @@ abstract class Board extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * 
+	 * Add the Graphics components to the JPanel
 	 * 
 	 * @param e the ActionEvent passed by the Graphics program 
 	 */
@@ -80,6 +92,11 @@ abstract class Board extends JFrame implements ActionListener {
 		return panel;
 	}
 
+	/**
+	 * Creates a new TicTacToe board with random characters
+	 * 
+	 * @return the JPanel with the graphics components
+	 */
 	private JPanel setupPanelTwo() {
 		JButton b;
 		JPanel panel = new JPanel();
@@ -112,6 +129,12 @@ abstract class Board extends JFrame implements ActionListener {
 		return panel;
 	}
 
+	/**
+	 * Returns a different character than the one passed
+	 * 
+	 * @param ch the current character to cycle
+	 * @return the new cycled character
+	 */
 	private static char cycleValue(char ch) {
 		switch (ch) {
 		case 'x':
@@ -123,6 +146,10 @@ abstract class Board extends JFrame implements ActionListener {
 		}
 	}
 
+	/**
+	 * Creates a new TicTacToe game using Java Graphics
+	 * 
+	 */
 	private void setupFrame() {
 		JPanel panel2 = new JPanel();
 
@@ -140,6 +167,11 @@ abstract class Board extends JFrame implements ActionListener {
 		super.setVisible(true);
 	}
 
+	/**
+	 * Generates a random x, o, or space
+	 * 
+	 * @return the random character
+	 */
 	private char randomXO() {
 		int rnd = (int) (Math.random() * TicTacToe.CHAR_POSSIBILITIES);
 		switch (rnd) {
@@ -158,6 +190,13 @@ abstract class Board extends JFrame implements ActionListener {
 
 	abstract boolean isWin();
 
+	/**
+	 * Determines the character at a given row and column
+	 * 
+	 * @param row the row to retrieve from
+	 * @param col the column to retrieve from
+	 * @return the character at the specified row and column
+	 */
 	public char charAt(int row, int col) {
 		String value = buttons[row][col].getText();
 		if (value.length() > 0)
@@ -166,6 +205,14 @@ abstract class Board extends JFrame implements ActionListener {
 			return '*';
 	}
    
+	/**
+	 * Determines the character at a given row and column in a String
+	 * 
+	 * @param s the String to evaluate
+	 * @param row the row to retrieve from
+	 * @param col the column to retrieve from
+	 * @return the character at the specified row and column
+	 */
    public static char charAt(String s, int row, int col) {
      int pos = row * TicTacToe.COLS + col;
      if (s.length() >= pos)
@@ -174,6 +221,11 @@ abstract class Board extends JFrame implements ActionListener {
        return '*';   
    }
 
+   /**
+	 * Sets this Board to show a specified TicTacToe String
+	 * 
+	 * @param s the String to display in this Board
+	 */
 	public void show(String s) {
 		int pos = 0;
 		String letter;
@@ -198,23 +250,41 @@ abstract class Board extends JFrame implements ActionListener {
 			}
 	}
 
+	/**
+	 * Resets this Board's string to ""
+	 * 
+	 */
 	public void resetBoardString() {
-   boardString = "";
+		boardString = "";
 		for (int r = 0; r < TicTacToe.ROWS; r++)
 			for (int c = 0; c < TicTacToe.COLS; c++) {
 				boardString += buttons[r][c].getText();
 			}
 	}
 
+	/**
+	 * Sets this Board's String representation.
+	 * 
+	 * @param s the String to use as this Board's string
+	 */
 	public void setBoardString(String s) {
 		boardString = s;
 		show(s);
 	}
 
+	/**
+	 * Returns this Board as a String
+	 * 
+	 * @return the String representation of this Board
+	 */
 	public String getBoardString() {
 		return boardString;
 	}
 
+	/**
+	 * Generates a random TicTacToe string to use in this Board
+	 * 
+	 */
 	public void displayRandomString() {
 		for (int r = 0; r < TicTacToe.ROWS; r++)
 			for (int c = 0; c < TicTacToe.COLS; c++) {

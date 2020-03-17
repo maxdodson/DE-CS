@@ -1,3 +1,16 @@
+/**
+ * Provides various methods for evaluating and converting TicTacToe
+ * strings and boards.
+ * 
+ * Maxwell Dodson
+ * DE CS II
+ * 3/15/20
+ * Hash Functions
+ * 
+ * @see Board
+ * @see TicTacToeHashCode
+ * 
+ */
 import java.util.Arrays;
 
 public class TicTacToe {
@@ -7,6 +20,13 @@ public class TicTacToe {
    public final static int CHAR_POSSIBILITIES = 3; // x, o or space
    public static final String WINNERS = "winners.txt";
   
+   /**
+	 * Counts the amount of a certain character in a 2D array
+	 * 
+	 * @param b the 2D array of characters to analyze
+	 * @param ch the character to test for
+	 * @return the integer number of times the character appears
+	 */
    private static int numChars(char[][] b, char ch) {
       int total = 0;
       for (int r = 0; r < ROWS; r++)
@@ -16,6 +36,12 @@ public class TicTacToe {
       return total;
    }
   
+   /**
+	 * Determines whether a TicTacToe board is valid
+	 * 
+	 * @param board the TicTacToe 2D character array to test
+	 * @return true if the board is valid, false otherwise
+	 */
    public static boolean valid(char[][] board) {
    
    // Ensure there are at least 3 xs and 2 os, or 3 os and 2 xs
@@ -29,6 +55,12 @@ public class TicTacToe {
       return false;
    }
   
+   /**
+	 * Converts a 2D TicTacToe character array to a String
+	 * 
+	 * @param b the 2D character array to convert
+	 * @return the String representation of the array
+	 */
    public static String boardToString(char[][] b) {
       String result = "";
       for (int r = 0; r < ROWS; r++) {
@@ -39,6 +71,12 @@ public class TicTacToe {
       return result;
    }
    
+   /**
+	 * Converts a String to a 2D TicTacToe character array
+	 * 
+	 * @param board the String to convert
+	 * @return the 2D character array representation of the string
+	 */
    public static char[][] stringToBoard(String board) {
       char[][] b = new char[ROWS][COLS];
       int index = 0;
@@ -49,7 +87,12 @@ public class TicTacToe {
       return b;
    }
 
-   
+   /**
+	 * Converts a numeric character to an x, o, or space
+	 * 
+	 * @param char the numeric character
+	 * @return the corresponding x, o, or space
+	 */
    public static char whichLetter(char ch) {
       switch (ch) {
          case '1' : 
@@ -63,6 +106,12 @@ public class TicTacToe {
       }
    }
      
+   /**
+	 * Converts a String to a 2D TicTacToe character array
+	 * 
+	 * @param s the String to convert
+	 * @return the 2D character array representation of the string
+	 */
    public static char[][] makeBoard(String s) {
       char[][] b = new char[ROWS][COLS];
       int ch = 0;
@@ -74,6 +123,12 @@ public class TicTacToe {
       return b;
    }
    
+   /**
+	 * Converts a String to a 2D TicTacToe character array
+	 * 
+	 * @param s the String to convert
+	 * @return the 2D character array representation of the string
+	 */
    private static String addOne(String s) {
    // s is a 9 character string, composed of 0s, 1s, and 2s.  Add 1 to the last char, adjusting
    // all the rest of the characters as necessary.

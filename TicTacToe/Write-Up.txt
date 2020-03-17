@@ -1,0 +1,91 @@
+Hash Function for Part 1:
+For the hash function in part 1, I knew I had to assign the characters values. To ensure there were no collisions, I assigned each character a different value and multiplied it by 3 to the power of the position in the TicTacToe board it was in. This way, no board would hash to the same index.
+
+Hash Function for Part 2:
+For my own hash function, I decided to modify the one I already made. First, I determines the numbers of winners, which was 1400, and made by array that size. I decided to make the values of each character random prime numbers to reduce collisions. I also used modulus of 9371, another prime number, on the final hash code. Lastly, to ensure that the hash code fell within the array size, I added a test to divide it by 7 if it was too large.
+
+Part 1:
+
+xxxxxxxxx - Invalid Board
+ooooooooo - Invalid Board
+          - Invalid Board
+x o x o - Invalid Length
+  x x o x - Invalid Board
+    xxxxx - Invalid Board
+ - Invalid Length
+xoxoxoxox - Loser
+ oxo x  x - Winner
+xxx - Invalid Length
+xxx      - Invalid Length
+asdnsadas - Invalid Board
+sasdasdasdas - Invalid Length
+xxxoooxoxoxoxo - Invalid Length
+xo xo xo xo xo xo - Invalid Length
+
+Part 2:
+
+Size: 1400
+Load Factor: 1.00
+Collisions: 944
+Chains: 394
+Max Chain Length: 5
+Average Chain Length: 2.396
+Elements in quarter 1: 226
+Elements in quarter 2: 406
+Elements in quarter 3: 417
+Elements in quarter 4: 351
+Collisions in tenth 1: 4
+Collisions in tenth 2: 66
+Collisions in tenth 3: 111
+Collisions in tenth 4: 122
+Collisions in tenth 5: 103
+Collisions in tenth 6: 116
+Collisions in tenth 7: 118
+Collisions in tenth 8: 128
+Collisions in tenth 9: 108
+Collisions in tenth 10: 68
+
+Part 3:
+String hashCode():
+
+Capacity: 2048
+Entries: 1400
+Load Factor: 0.68
+Entries in quarter 1: 225
+Entries in quarter 2: 182
+Entries in quarter 3: 143
+Entries in quarter 4: 157
+Collisions in tenth 1: 78
+Collisions in tenth 2: 114
+Collisions in tenth 3: 68
+Collisions in tenth 4: 56
+Collisions in tenth 5: 91
+Collisions in tenth 6: 77
+Collisions in tenth 7: 40
+Collisions in tenth 8: 59
+Collisions in tenth 9: 64
+Collisions in tenth 10: 60
+Average Chain Length: 2.244
+Max Chain Length: 4
+
+My hashCode():
+
+Capacity: 2048
+Entries: 1400
+Load Factor: 0.68
+Entries in quarter 1: 250
+Entries in quarter 2: 434
+Entries in quarter 3: 260
+Entries in quarter 4: 0
+Collisions in tenth 1: 8
+Collisions in tenth 2: 166
+Collisions in tenth 3: 167
+Collisions in tenth 4: 162
+Collisions in tenth 5: 181
+Collisions in tenth 6: 180
+Collisions in tenth 7: 80
+Collisions in tenth 8: 0
+Collisions in tenth 9: 0
+Collisions in tenth 10: 0
+Average Chain Length: 2.396
+Max Chain Length: 5
