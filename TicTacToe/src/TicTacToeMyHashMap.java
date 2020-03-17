@@ -42,7 +42,7 @@ public class TicTacToeMyHashMap  {
 	}
 
 	/**
-	 * Calculates the capacity of this HashMap using the Java Reflection API
+	 * Calculates the capacity of this HashMap using the Java Reflect API
 	 * 
 	 * @return the integer capacity of this HashMap
 	 */
