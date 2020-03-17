@@ -70,9 +70,9 @@ abstract class Board extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Add the Graphics components to the JPanel
+	 * Adds the Graphics components to the JPanel
 	 * 
-	 * @param e the ActionEvent passed by the Graphics program 
+	 * @param e the ActionEvent passed by the ActionListener 
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
