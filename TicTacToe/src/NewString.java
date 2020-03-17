@@ -21,10 +21,20 @@ public class NewString {
 	public static final int O_VALUE = 1217;
     private String s;
 
+    /**
+	 * Instantiates a new NewString with a given String
+	 *
+	 */
     public NewString(String str) {
        s = str;
     }
 
+    /**
+	 * Provides a hash function to use in my HashMap
+	 * 
+	 * @return the integer hash code of this NewString
+	 *
+	 */
     @Override 
     public int hashCode() {
 	    int hashCode = 0;
@@ -41,6 +51,13 @@ public class NewString {
 		return hashCode;
     }
     
+    /**
+	 * Generates a hash code for a character at a position
+	 * 
+	 * @param chtr the character to hash
+	 * @param pos the position of the character
+	 * @return the integer hash code of the character
+	 */
     public static int charHash(char chtr, int pos) {
 		chtr = Character.toLowerCase(chtr);
 		if (chtr == ' ') {
@@ -57,18 +74,40 @@ public class NewString {
 		}
 	}
    
+    /**
+	 * Sets this NewString's string field to the specified String
+	 * 
+	 * @param str the String to set as s
+	 */
     public void setString(String str) {
     	s = str;
     }
    
+    /**
+	 * Returns this NewString's string field
+	 * 
+	 * @return the String stored in s
+	 */
     public String getString() {
     	return s;
     }
     
+    /**
+	 * Returns this NewString as a String
+	 * 
+	 * @return the String representation of this NewString
+	 */
     public String toString() {
     	return s;
     }
    
+    /**
+	 * Tests whether this NewString is equal to another Object by
+	 * comparing its string field.
+	 * 
+	 * @return true if this NewString's string field is equal to
+	 * the other NewString's string field, false otherwise
+	 */
     @Override
     public boolean equals(Object other) {
     	if (other instanceof NewString) 

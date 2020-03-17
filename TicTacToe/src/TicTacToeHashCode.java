@@ -40,10 +40,10 @@ public class TicTacToeHashCode extends Board {
 		File in = new File(TicTacToe.WINNERS); // Attempt to find winners file
 		try {
 			Scanner input = new Scanner(in);
-			while (input.hasNextLine()) {
+			while (input.hasNextLine()) { // Read in winners file
 				String line = input.nextLine();
-				super.setBoardString(line);
-				winnersArr[myHashCode()] = true;
+				super.setBoardString(line); // Replace BoardString in Graphics program
+				winnersArr[myHashCode()] = true; // Set the element at the hash index to true
 			}
 			input.close();
 		} catch (IOException e) {}
