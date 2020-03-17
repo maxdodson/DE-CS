@@ -127,6 +127,7 @@ public class TicTacToeHashCode extends Board {
 	 * various test strings.
 	 * 
 	 * @param args any command line arguments to pass in
+	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		TicTacToeHashCode board = new TicTacToeHashCode("Tic Tac Toe");

@@ -45,6 +45,9 @@ public class TicTacToeHashMap  {
 	 * Calculates the capacity of this HashMap using the Java Reflect API
 	 * 
 	 * @return the integer capacity of this HashMap
+	 * 
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 */
     private int capacity() throws NoSuchFieldException, IllegalAccessException {
     	// Access the HashMap table field
@@ -59,6 +62,10 @@ public class TicTacToeHashMap  {
 	 * Instantiates this HashMap and analyzes it
 	 * 
 	 * @param args any command line arguments to pass in
+	 * 
+	 * @throws java.io.FileNotFoundException
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 */
     public static void main(String[] args) throws java.io.FileNotFoundException,
                                               NoSuchFieldException, 
@@ -70,6 +77,8 @@ public class TicTacToeHashMap  {
 	 * Prints various statistics about this HashMap.
 	 * Includes capacity, load factor, chain lengths, distribution, etc.
 	 * 
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 */
     public void listStats() throws NoSuchFieldException, IllegalAccessException {
     	int capacity = capacity();

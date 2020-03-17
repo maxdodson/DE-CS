@@ -90,7 +90,7 @@ public class TicTacToe {
    /**
 	 * Converts a numeric character to an x, o, or space
 	 * 
-	 * @param char the numeric character
+	 * @param ch the numeric character
 	 * @return the corresponding x, o, or space
 	 */
    public static char whichLetter(char ch) {
@@ -235,7 +235,7 @@ public class TicTacToe {
    /**
 	 * Tests whether a TicTacToe board wins
 	 * 
-	 * @param board the TicTacToe board to test
+	 * @param b the TicTacToe board to test
 	 * @return true if the board wins
 	 */
    public static boolean isWin(char[][]b) {
@@ -245,7 +245,7 @@ public class TicTacToe {
    /**
 	 * Returns a string stating whether a TicTacToe board wins
 	 * 
-	 * @param board the TicTacToe board to test
+	 * @param b the TicTacToe board to test
 	 * @return the String of whether the board is a winner or loser
 	 */
    public static String isWinString(char[][]b) {

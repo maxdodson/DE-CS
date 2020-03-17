@@ -59,6 +59,10 @@ public class TicTacToeMyHashMap  {
 	 * Instantiates this HashMap and analyzes it
 	 * 
 	 * @param args any command line arguments to pass in
+	 * 
+	 * @throws java.io.FileNotFoundException
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 */
     public static void main(String[] args) throws java.io.FileNotFoundException,
                                               NoSuchFieldException, 
@@ -70,6 +74,8 @@ public class TicTacToeMyHashMap  {
 	 * Prints various statistics about this HashMap
 	 * Includes capacity, load factor, chain lengths, distribution, etc.
 	 * 
+	 * @throws NoSuchFieldException
+	 * @throws IllegalAccessException
 	 */
     public void listStats() throws NoSuchFieldException, IllegalAccessException {
     	int capacity = capacity();

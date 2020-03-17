@@ -24,6 +24,7 @@ public class NewString {
     /**
 	 * Instantiates a new NewString with a given String
 	 *
+	 * @param str the initial String
 	 */
     public NewString(String str) {
        s = str;
@@ -33,7 +34,6 @@ public class NewString {
 	 * Provides a hash function to use in my HashMap
 	 * 
 	 * @return the integer hash code of this NewString
-	 *
 	 */
     @Override 
     public int hashCode() {
@@ -105,6 +105,7 @@ public class NewString {
 	 * Tests whether this NewString is equal to another Object by
 	 * comparing its string field.
 	 * 
+	 * @param other the other Object to compare
 	 * @return true if this NewString's string field is equal to
 	 * the other NewString's string field, false otherwise
 	 */
