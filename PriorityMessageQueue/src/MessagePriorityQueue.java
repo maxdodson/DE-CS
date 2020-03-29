@@ -21,6 +21,8 @@ public class MessagePriorityQueue {
 	private static int time;
 	private static final int PRIORITIES = 5;
 	private static final int PROCESSING_TIME = 4;
+	private static int iterations = 1000;
+	private static int minMessages = 50;
 	
 	/**
 	 * Instantiates a MessagePriorityQueue by preparing an ArrayList
@@ -64,8 +66,6 @@ public class MessagePriorityQueue {
 	 * @param args if 2 specified, will set number of iterations and min. number of messages in queue
 	 */
 	public static void main(String[] args) {
-		int iterations = 1000;
-		int minMessages = 50;
 		// Allow changing of default iterations and minMessages through command line args
 		if (args.length == 2) {
 			iterations = Integer.parseInt(args[0]);
@@ -95,6 +95,11 @@ public class MessagePriorityQueue {
 			}
 			time++; // Increment the current time
 		}
+		Message msg = queue.remove();
+		while (msg != null) { // Remove any remaining messages
+			arrivals[msg.getPriority()].add(time - msg.getArrivalTime());
+			msg = queue.remove();
+		}
 		
 		// Print the average arrival times of Messages of each priority level
 		System.out.println("Iterations: " + iterations);
@@ -105,7 +110,7 @@ public class MessagePriorityQueue {
 				sum += j;
 			}
 			double avg = (double)sum / arrivals[i].size();
-			System.out.printf("Average arrival time (Priority %d): %.3f\n", i, avg);
+			System.out.printf("Average waiting time (Priority %d): %.3f\n", i, avg);
 		}
 	}
 }

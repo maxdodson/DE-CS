@@ -1,0 +1,26 @@
+How my code meets the requirements:
+
+* My Message class meets the requirements by including both required fields and providing all necessary methods for MessagePriorityQueue, including getPriority().
+* My MessagePriorityQueue class meets the requirements by using an ArrayList to store five queues and by using the priority level from getPriority() to place a Message in the proper queue.
+* My simulation meets the requirements by making all 5 priorities have equal probability (0.2) per iteration using Math.random(). Additionally, Messages in my simulation take 4 iterations to process, and the average waiting time for each priority is listed when the simulation ends. 
+
+
+How I ran my code:
+
+My code runs from a main() method in MessagePriorityQueue. The simulation instantiates a MessagePriorityQueue and simulates a stream of Messages. The average waiting time for each priority level is listed once the simulation terminates. By default, the simulation iterates 1,000 times and requires a minimum of 50 Messages before it begins to remove any of them. Command line arguments, which I used to evaluate my code with various inputs, are also accepted in order to change the default values.
+
+
+Average Waiting Times:
+
+Iterations: 4000
+Minimum to prime: 40
+Average waiting time (Priority 0): 4.227
+Average waiting time (Priority 1): 4.343
+Average waiting time (Priority 2): 4.718
+Average waiting time (Priority 3): 5.631
+Average waiting time (Priority 4): 169.186
+
+
+How my implementation compares to a heap:
+
+In my implementation, I use an ArrayList of LinkedLists. Because my ArrayList does not have to be resized, adding the LinkedList queues takes O(1) time. When I add messages, the ArrayList.get() and LinkedList.add() calls both run in O(1) time. Finally, when I remove messages, iteration through the ArrayList takes O(n) time and removing an element from a LinkedList takes O(1) time. As a result, the worst-case time complexity for my implementation is O(n). In a heap, all of these operations take O(log n) time, meaning that a heap would run considerably faster than my implementation, especially when n is very high.
