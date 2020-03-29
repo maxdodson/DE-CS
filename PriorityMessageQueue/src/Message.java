@@ -1,5 +1,5 @@
 /**
- * Represents a message with a specified priority level and arrival time
+ * Represents a message with a specified priority level and arrival time.
  * 
  * Maxwell Dodson
  * DE CS II

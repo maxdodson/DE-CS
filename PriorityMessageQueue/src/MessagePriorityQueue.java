@@ -1,6 +1,6 @@
 /**
- * Represents a Priority Queue of Messages. Provides methods to add and remove from this
- * Priority Queue.
+ * Represents a Priority Queue of Messages. Provides methods to add and remove
+ * from this Priority Queue.
  * 
  * Maxwell Dodson
  * DE CS II
