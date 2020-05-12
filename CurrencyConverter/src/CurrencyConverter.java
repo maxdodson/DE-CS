@@ -159,6 +159,16 @@ public class CurrencyConverter {
         		}
         	}
         });
+        
+        // Switch the currencies when the user presses the "Switch" button
+        switchButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent event) {
+        		String startCurrency = (String)initialCurrencyMenu.getSelectedItem(); 
+    			String endCurrency = (String)finalCurrencyMenu.getSelectedItem();
+        		initialCurrencyMenu.setSelectedItem(endCurrency);
+        		finalCurrencyMenu.setSelectedItem(startCurrency);
+        	}
+        });
 	}
 	
 	/**
