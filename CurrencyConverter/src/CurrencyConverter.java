@@ -1,3 +1,19 @@
+/**
+ * Provides a GUI to convert currencies. Implements a Weighted Graph to
+ * store exchange rates retrieved from an API
+ * 
+ * Maxwell Dodson
+ * DE CS II
+ * 5/11/20
+ * Currency Converter
+ * 
+ * @author Maxwell Dodson
+ * 
+ * @see MyTextField
+ * @see IO
+ * @see WeightedGraph
+ * 
+ */
 import java.util.HashMap;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -20,6 +36,11 @@ public class CurrencyConverter {
 	private static final String API_ENDPOINT = "https://api.exchangeratesapi.io/latest?base=";
 	private static WeightedGraph.Graph graph;
    
+	/**
+	 * Retrieves currency exchange rates by making HTTP requests to an
+	 * API and stores them in a Weighted Graph 
+	 * 
+	 */
 	public static void buildGraph() {
 		graph = new WeightedGraph.Graph(CURRENCIES.length * CURRENCIES.length);
 	    // Fetch the exchange rates using each currency as the base reference
@@ -46,6 +67,10 @@ public class CurrencyConverter {
 	    }
 	}
    
+	/**
+	 * Instantiates and displays the various graphics components
+	 * 
+	 */
 	public static void createGraphicalInterface() {
 		JFrame window = new JFrame("Currency Converter");
 	    window.getContentPane().setBackground(Color.WHITE);
@@ -124,7 +149,9 @@ public class CurrencyConverter {
         			double value = Double.parseDouble(userField.getText());
         			String startCurrency = (String)initialCurrencyMenu.getSelectedItem(); 
         			String endCurrency = (String)finalCurrencyMenu.getSelectedItem(); 
+        			// Convert the currency and display the result
         			double converted = convertCurrency(startCurrency, endCurrency, value);
+        			converted = Math.round(converted*100) / 100.0; // Round to 2 decimal places
         			convertedLabel.setText("" + converted);
         		}
         		catch (Exception e) {
@@ -134,9 +161,17 @@ public class CurrencyConverter {
         });
 	}
 	
+	/**
+	 * Finds the currency exchange rate stored in the Graph and performs
+	 * the mathematical conversion
+	 * 
+	 * @param initCurrency the initial currency
+     * @param finalCurrency the currency to be converted to
+     * @param amount the value of the currency to convert
+     * 
+	 */
 	public static double convertCurrency(String initCurrency, String finalCurrency, double amount) {
 		ArrayList<WeightedGraph.Edge> edges = graph.getEdges();
-		
 		// Find conversion factor in Graph
 		for (int i=0; i<edges.size(); i++) {
 			String origin = edges.get(i).getOrigin();
@@ -150,6 +185,11 @@ public class CurrencyConverter {
 		return -1;
 	}
    
+	/**
+	 * Builds the Graph containing exchange rates and launches the GUI
+	 * 
+	 * @param args any command line arguments
+	 */
 	public static void main(String[] args) {
 		buildGraph();
 		System.out.println("Edges created: " + graph.getEdges().size());

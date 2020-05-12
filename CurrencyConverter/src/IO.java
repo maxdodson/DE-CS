@@ -1,3 +1,16 @@
+/**
+ * Provides methods for making HTTP requests and parsing JSON
+ * 
+ * Maxwell Dodson
+ * DE CS II
+ * 5/11/20
+ * Currency Converter
+ * 
+ * @author Maxwell Dodson
+ * 
+ * @see CurrencyConverter
+ * 
+ */
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.InputStream;
@@ -7,20 +20,26 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class IO {
+	
+	/**
+	 * Makes an HTTP GET request to a specified API endpoint
+	 * 
+	 * @param endpoint the API endpoint URL
+	 * @return the response from the API
+	 */
 	public static String get(String endpoint) {
 		HttpURLConnection connection = null;
 		String response = "";
 	    try {
 	    	// Establish connection
 	    	URL url = new URL(endpoint);
-	        connection = (HttpURLConnection) url.openConnection();
+	        connection = (HttpURLConnection)url.openConnection();
 	        connection.setRequestMethod("GET");
-	        connection.setUseCaches(false);
-	        connection.setDoOutput(true);
+	        connection.setUseCaches(false); // Make sure to fetch new rates each time
 	    
 	        // Process response
-	        InputStream is = connection.getInputStream();
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+	        InputStream stream = connection.getInputStream();
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 	        String line;
 	        // Read response into String
 	        while ((line = reader.readLine()) != null) {
@@ -41,6 +60,12 @@ public class IO {
 	    return response;
 	}
 	
+	/**
+	 * Parses a String of JSON into a JSONObject
+	 * 
+	 * @param str a String of JSON
+	 * @return the parsed JSON as a JSONObject
+	 */
 	public static JSONObject parseJSON(String str) {
 		JSONObject json = null;
 		// Attempt to parse the String
