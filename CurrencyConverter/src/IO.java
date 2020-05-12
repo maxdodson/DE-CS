@@ -9,7 +9,7 @@ import org.json.simple.parser.JSONParser;
 public class IO {
 	public static String get(String endpoint) {
 		HttpURLConnection connection = null;
-		String response = null;
+		String response = "";
 	    try {
 	    	// Establish connection
 	    	URL url = new URL(endpoint);
@@ -48,8 +48,9 @@ public class IO {
 	    try {
 	    	Object obj  = parser.parse(str);
 	        json = (JSONObject)obj; // Cast to JSONObject
-	    } catch (Exception e) {
-	    	System.out.println(e);
+	    }
+	    catch (Exception e) {
+	    	System.out.println("IO: " + e);
 	    }
 	    return json;
 	}
